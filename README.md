@@ -1,1 +1,1 @@
-# computacion-visual-javier-andres-carrillo
+# Computación Visual Javier Andrés Carrillo Carrasco
