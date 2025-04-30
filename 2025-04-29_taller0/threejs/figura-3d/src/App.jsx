@@ -1,49 +1,43 @@
-import React from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Canvas, useFrame } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
+import { useRef } from 'react'
 
-// Componente del cubo con animaciones
-const AnimatedBox = () => {
-  // Usamos un ref para el objeto 3D
-  const ref = React.useRef();
+function MiCubo() {
+  const meshRef = useRef()
 
-  // Animación con useFrame
-  useFrame((state, delta) => {
-    // Traslación senoidal (movimiento en X)
-    ref.current.position.x = Math.sin(state.clock.elapsedTime) * 2;
+  useFrame((state) => {
+    const t = state.clock.elapsedTime
+    // Movimiento circular
+    meshRef.current.position.x = Math.sin(t) * 2
+    meshRef.current.position.y = Math.cos(t) * 2
 
-    // Rotación constante sobre el eje Y
-    ref.current.rotation.y += delta;
+    // Rotación sobre su propio eje
+    meshRef.current.rotation.x = t
+    meshRef.current.rotation.y = t
 
-    // Escalado con función temporal (Math.sin)
-    ref.current.scale.set(
-      1 + Math.sin(state.clock.elapsedTime) * 0.5,  // Oscilación de la escala
-      1 + Math.sin(state.clock.elapsedTime) * 0.5,
-      1 + Math.sin(state.clock.elapsedTime) * 0.5
-    );
-  });
+    // Escalado suave
+    meshRef.current.scale.set(
+      1 + 0.5 * Math.sin(t), 
+      1 + 0.5 * Math.sin(t), 
+      1 + 0.5 * Math.sin(t)
+    )
+  })
 
   return (
-    <mesh ref={ref}>
-      <boxGeometry args={[2, 2, 2]} />
-      <meshStandardMaterial color="orange" />
+    <mesh ref={meshRef}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color="green" />
     </mesh>
-  );
-};
+  )
+}
 
-const App = () => {
+export default function App() {
   return (
-    <Canvas>
-      {/* Agregamos OrbitControls para poder navegar en la escena */}
+    <Canvas style={{ height: '100vh' }}>
+      <ambientLight />
+      <pointLight position={[10, 10, 10]} />
+      <MiCubo />
       <OrbitControls />
-      {/* Luz en la escena */}
-      <ambientLight intensity={0.5} />
-      <spotLight position={[30, 30, 30]} angle={0.15} intensity={1} />
-      {/* Objeto 3D con animaciones */}
-      <AnimatedBox />
     </Canvas>
-  );
-};
-
-export default App;
-
+  )
+}
