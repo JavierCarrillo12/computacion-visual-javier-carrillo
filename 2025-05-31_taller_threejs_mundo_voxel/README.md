@@ -93,9 +93,15 @@ Posteriormente, el material fue reemplazado por un color sólido (0x228B22) para
 ---
 ---
 
-## Vista General del Mundo
+## 🌍 Vista General del Mundo
+
+🧱 Primera versión – Terreno con texturas y figuras geométricas
+En esta etapa se genera un terreno voxel con alturas aleatorias. Se aplican texturas PBR realistas y se agregan figuras primitivas (Sphere, Cylinder, Cone) para probar la integración de geometrías en el entorno.
 
 ![Primera-versión-terreno-aplicación_de_texturas](https://github.com/user-attachments/assets/2ecbd03d-3a28-4851-b701-976bd6fc5ad8)
+
+🌳 Versión final – Mundo completo con árboles y criaturas
+Aquí se integran elementos naturales generados proceduralmente: árboles compuestos por cilindros y esferas, y animales simples creados con cajas. Todo se distribuye aleatoriamente sobre el terreno usando un mapa de alturas, logrando un entorno interactivo y visualmente coherente.
 
 ![Versión_Final_terreno_arboles_animales](https://github.com/user-attachments/assets/b3db8560-5467-415b-a236-ec3ee6690220)
 
