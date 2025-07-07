@@ -28,6 +28,6 @@
 
 - **Informe Práctica 4: YOLO + SAM**  
   Integración y resultados de la combinación de YOLO con el modelo SAM.
-> [https://github.com/JavierCarrillo12/repositorio-grupal/Informe_Taller_Yolo_SAM]([http://github.com/](https://github.com/JavierCarrillo12/Computacion-visual-jtorresle-jugomezra-dagarzonmo-jacarrillo/tree/main/Talleres/2025-06-13_taller_yolo_sam)).
+> [https://github.com/JavierCarrillo12/repositorio-grupal/Taller_Yolo_SAM](http://github.com/](https://github.com/JavierCarrillo12/Computacion-visual-jtorresle-jugomezra-dagarzonmo-jacarrillo/tree/main/Talleres/2025-06-13_taller_yolo_sam)).
 
 ---
